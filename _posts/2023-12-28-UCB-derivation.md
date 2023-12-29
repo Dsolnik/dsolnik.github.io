@@ -21,8 +21,8 @@ $$\epsilon$$-greedy algorithms will *always*, even after we've been training for
 $$\frac{\epsilon}{k}$$.
 
 Ideally, we want to explore a lot at the beginning and exploit more as we sample more from the different arms. 
-An $\epsilon$-greedy algorithm makes no distinction between when we have more information and
-when we have less information. 
+An $$\epsilon$$-greedy algorithm makes no distinction between when we have 100000 samples or just 1 sample 
+to decide how much or how to explore.
 
 ### Vanilla Upper Confidence Bounds
 When we get more samples, we learn more about the variance of the different arms.
