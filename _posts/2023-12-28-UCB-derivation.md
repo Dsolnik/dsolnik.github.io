@@ -13,12 +13,12 @@ the derivation of Upper Confidence Bounds is not great.
 Let's get to whether they got differently.
 
 ### Problems with $$\epsilon$$-greedy algorithms
-An $$\epsilon$$-greedy solution explores $$\epsilon$$% of the time and selects the *greedy* solution
-the other $$1 - \epsilon$$% of the time.
+An $$\epsilon$$-greedy solution selects a random action with probability $$\epsilon$$ and selects the *greedy* action  
+the the rest of the time.
 
 If we assume that the means for the different "arms" are stationary, i.e. not changing over time,
-$$\epsilon$$-greedy algorithms will *always*, even after we've been training for eons, select every action
-$$\frac{\epsilon}{k}$$% of the time.
+$$\epsilon$$-greedy algorithms will *always*, even after we've been training for eons, select every action with probability 
+$$\frac{\epsilon}{k}$$.
 
 Ideally, we want to explore a lot at the beginning and exploit more as we sample more from the different arms. 
 An $\epsilon$-greedy algorithm makes no distinction between when we have more information and
