@@ -23,5 +23,4 @@ Currently, I work at [D.E. Shaw & Co.](https://deshaw.com) as a Software Enginee
 productionized [Turnstile](https://saltmarch.com/watch/turnstile-a-hierarchical-authorization-system), the authorization
 system of the firm. 
 
-I've also worked on encrypted, high performance sockets 
-([`boost::asio`](https://www.boost.org/doc/libs/1_84_0/doc/html/boost_asio.html)) and at-rest container encryption in the OCI ecosystem. 
+I've also worked on encrypted, high performance sockets and at-rest container encryption in the OCI ecosystem. 
