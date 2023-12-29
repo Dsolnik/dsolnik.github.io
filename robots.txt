@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://dsolnik.github.io/blog/sitemap.xml
+Sitemap: https://dsolnik.github.io/sitemap.xml
