@@ -98,3 +98,8 @@ A_{t} &=\underset{a}{\arg\max}\left[Q_{t}(a) + c_a \cdot \sqrt{\lambda_a(t)^2} \
 $$
 
 This is the final formulation in the book by Sutton and Barto.
+
+### The Gorey Derivation of UCB
+I kind of lied before when I said we're "arbitrarily" picking $\n t$. It turns out that it comes from
+[hoeffding's inequality for 1 sub-gaussian variables](https://www.wikiwand.com/en/Hoeffding%27s_inequality).
+We'll derive that now.
