@@ -3,7 +3,7 @@ layout: post
 title: Upper Confidence Bounds for Multi-Arm Bandits
 date: 2023-12-28 11:12:00-0400
 description: Deriving Sutton and Barton's UCB Bandit Algoritmhs
-tags: math statistics 
+tags: math statistics reinforcement-learning
 categories: 
 related_posts: false
 ---
