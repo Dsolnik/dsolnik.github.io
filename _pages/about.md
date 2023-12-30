@@ -19,7 +19,7 @@ I'm a current masters student in Statistics at [Columbia University](https://sta
 
 I'm a recent Computer Science and Mathematics graduate of [The University of Chicago](https://uchicago.edu).
 
-Currently, I work at [D.E. Shaw & Co.](https://deshaw.com) as a Software Engineer. In my first 3 years, I creatied and
+Currently, I work at [D.E. Shaw & Co.](https://deshaw.com) as a Software Engineer. In my first 3 years, I created and
 productionized [Turnstile](https://saltmarch.com/watch/turnstile-a-hierarchical-authorization-system), the authorization
 system of the firm. 
 
