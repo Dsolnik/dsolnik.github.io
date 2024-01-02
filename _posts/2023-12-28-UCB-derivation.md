@@ -53,12 +53,10 @@ OK, cool, but there's one glaring problem here: We don't know $$\sigma_{R_a}$$. 
 sample variance and use a quantile in the $$t$$-distribution instead of the normal, but what if we just, *gasps*, make 
 it a **hyper-parameter** and make it our user's problems? Lets call that $$c_a$$
 
-And while we're at it, collapse $$\Phi^{-1}(.975)$$ into the constant too.
-
 $$
 \begin{align}
 A_{t} &\doteq \underset{a}{\arg\max}\left[Q_{t}(a) + \Phi^{-1}(.975)\cdot \sigma_{R_a} \frac{1}{\sqrt{N_t(a)}}\right] \\
-      &=\underset{a}{\arg\max}\left[Q_{t}(a) + c_a \frac{1}{\sqrt{N_t(a)}}\right]
+      &=\underset{a}{\arg\max}\left[Q_{t}(a) + $\Phi^{-1}(.975) \cdot c_a \frac{1}{\sqrt{N_t(a)}}\right]
 \end{align}
 $$
 
@@ -68,22 +66,24 @@ optimal arm. If that happens, our estimate $$Q_t(a)$$ of $$\mathbb{E}[R_a] = \mu
 because our upper confidence bound will be far too low (recall that $$95$$% of confidence intervals will contain 
 the true parameter, so that means $$5$$% of them don't!).
 
-To deal with that, one elegant way is to artificially increase the variance for each estimate of $$\mathbb{E}[R_a] = \mu_a$$.
-We can do that with a variance multipler which we'll call $$\lambda_a(t)^2$$.
+To deal with that, one elegant way is to increase the confidence level of our confidence intervals over time (this is equivalent
+to keeping the confidence level the same and increasing the variance estimate) for each estimate of $$\mathbb{E}[R_a] = \mu_a$$.
+
+We can do that with a multipler which we'll call $$\lambda_a(t)^2$$.
 
 $$
 A_{t} =\underset{a}{\arg\max}\left[Q_{t}(a) + c_a \cdot \sqrt{\lambda_a(t)^2} \cdot \frac{1}{\sqrt{N_t(a)}}\right]
 $$
 
 Well, we want $$\lambda_a(t)$$ to decrease over time, right? But, we want to make sure that it's always unbounded
-so that it gives any estimate the ability to recover from a really unlucky streak. What if we set it to $$\lambda_a(t)^2 = \ln t$$.
-This would make it so that if we have $$\ln t$$ samples for action $$a$$, then the variance multipler to $$c$$ in our confidence
-bound estimate will be 1
+so that as we go to $$\infty$$ in time, the confidence intervals go to $$100$$%. What if we set it to $$\lambda_a(t)^2 = \ln t$$?.
+This would make it so that at $$100$$ samples, we're multiplying by $$\sqrt(\ln 100) = 2.14 \approx \Phi(.99)$$, so we'll be at a 
+$$98$$% confidence interval after $$100$$ samples.
 
 $$\sqrt{\lambda_a(t)^2} \cdot \frac{1}{\sqrt{N_t(a)}} = \sqrt{\frac{\lambda_a(t)^2}{N_t(a)}} = \sqrt{\frac{\ln t}{\ln t}} = \sqrt{1} = 1$$
 
 If all of the means are of the same magnitude, 
-this will encourage us to have $$O(\ln t)$$ samples for each action $$a$$ at any given point in time. 
+we're encouraged to have $$O(\ln t)$$ samples for each action $$a$$ at any given point in time. 
 If we have less than $$\ln t$$
 samples for a point in time $$t$$, then the upper confidence bound for $$a$$ will be more than $$c$$ away from the estimated mean.
 
