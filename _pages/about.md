@@ -15,11 +15,10 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm a current masters student in Statistics at [Columbia University](https://stat.columbia.edu).
+I'm a Statistics master's graduate from [Columbia University](https://stat.columbia.edu) and a Computer Science and 
+Mathematics graduate of [The University of Chicago](https://uchicago.edu).
 
-I'm a recent Computer Science and Mathematics graduate of [The University of Chicago](https://uchicago.edu).
-
-Currently, I work at [D.E. Shaw & Co.](https://deshaw.com) as a Software Engineer. In my first 3 years, I created and
+Currently, I work at [D.E. Shaw & Co.](https://deshaw.com) on alternative data. In my first 3 years, I created and
 productionized [Turnstile](https://saltmarch.com/watch/turnstile-a-hierarchical-authorization-system), the authorization
 system of the firm. 
 
